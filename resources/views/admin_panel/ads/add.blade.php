@@ -8,13 +8,13 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0 text-dark">Edit Post</h1>
+              <h1 class="m-0 text-dark">ADD AD</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{url('/home')}}">Home</a></li>
                 <li class="breadcrumb-item"><a href="{{url('/ads')}}">ADS</a></li>
-                <li class="breadcrumb-item active">Edit Post</li>
+                <li class="breadcrumb-item active">ADD AD</li>
               </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -26,7 +26,7 @@
           <form method="post" enctype="multipart/form-data" action="{{ url('ads/ad-store')}}" autocomplete="on">
                  @csrf
                  @method('put')
-                 <h5 class="title">{{ __('Edit ADS') }}</h5> <a href = "{{url('/ads')}}" class="btn btn-outline-secondary">Back</a>
+                 <h5 class="title">{{ __('ADD AD') }}</h5> <a href = "{{url('/ads')}}" class="btn btn-outline-secondary">Back</a>
 
                  <div class="row">
                      <label class="col-sm-2 col-form-label">{{ __('Title') }}</label>
@@ -93,7 +93,7 @@
                      </div>
                  </div>
                      
-                 <button type="submit" class="btn btn-outline-secondary pull-right">{{ _('Update AD') }}</button>
+                 <button type="submit" class="btn btn-outline-secondary pull-right">{{ _('ADD AD') }}</button>
                      <div class="clearfix"></div>              
          </form>
      </div>

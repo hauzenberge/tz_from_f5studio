@@ -14,5 +14,14 @@ class CategorySeeder extends Seeder
         App\Categoty::create([
         	'name' => 'Lorem Ipsum',
         ]);
+        App\Categoty::create([
+            'name' => 'Недвижимость',
+        ]);
+        App\Categoty::create([
+            'name' => 'Транспорт',
+        ]);
+        App\Categoty::create([
+            'name' => 'Бытовая техника',
+        ]);
     }
 }

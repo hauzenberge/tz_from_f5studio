@@ -13,24 +13,9 @@ class Files extends Model
     	$file = $request->file($fileinputname);
         //dd($file);
         if ($file != null) {
-            $file->move(public_path() . '/app/public/'.$src,$name.'.png');
+            $file->move(public_path() . '/storage/app/public/'.$src,$name.'.png');
         }
     	
-    	return 'Complete';	
-    }
-
-    public function uploadfiles($id, $request){
-    	foreach ($request->file() as $file) {
-                foreach ($file as $f) {
-                	$name = time().'_'.$f->getClientOriginalName();
-                    $f->move(public_path() . '/app/public/galleries/', $name);
-                    $photo = new PhotoGalerryItems;
-			    	$photo->photo_galerry_id = $id;
-			    	$photo->image_src = '/app/public/galleries/'.$name;
-			    	$photo->save();
-                }
-         }
-
     	return 'Complete';	
     }
 

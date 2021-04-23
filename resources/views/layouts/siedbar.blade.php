@@ -71,6 +71,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
         </div>
 
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">    
+           <div class="info">    
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+             <a href="{{ route('logout') }}"
+                 onclick="event.preventDefault();
+                 document.getElementById('logout-form').submit();">
+                 {{ __('Logout') }}
+             </a>     
+             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                          @csrf
+             </form>    
+          </div>
+        </div>
+
         <!-- Sidebar Menu -->
         <nav class="mt-2">
            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -98,6 +114,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                        </a>
                  </li>
 
+                 @if(Auth::user()->role_id == 1)
+
                  <li class="nav-item has-treeview">
                        <a href="{{url('/categories')}}" class="nav-link">
                            <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -109,7 +127,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                        </a>
                  </li>
 
-                @if(Auth::user()->role_id == 1)
+                
                     <li class="nav-item has-treeview">
                        <a href="#" class="nav-link">
                            <i class="nav-icon fas fa-tachometer-alt"></i>
